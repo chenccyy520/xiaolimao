@@ -36,9 +36,9 @@ public class ContentAdapter extends PagerAdapter {
 	@Override
 	public Object instantiateItem(ViewGroup container, int position) {
 		BasePager pager = mPagerList.get(position);
-		container.addView(pager.rootView);
+		container.addView(pager.mRootView);
 		// pager.initData();// 初始化数据.... 不要放在此处初始化数据, 否则会预加载下一个页面
-		return pager.rootView;
+		return pager.mRootView;
 	}
 	 //切换的时候销毁当前的组件
 	@Override

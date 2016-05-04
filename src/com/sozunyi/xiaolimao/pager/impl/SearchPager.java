@@ -14,9 +14,9 @@ public class SearchPager extends BasePager {
 
 	@Override
 	public View initViews() {
-		rootView = View.inflate(mActivity, R.layout.activity_search, null);
+		mRootView = View.inflate(mActivity, R.layout.activity_search, null);
 		
-		return rootView;
+		return mRootView;
 	}
 	
 	

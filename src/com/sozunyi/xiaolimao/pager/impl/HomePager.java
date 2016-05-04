@@ -51,7 +51,7 @@ public class HomePager extends BasePager{
 	
 	@Override
 	public View initViews() {
-		rootView = View.inflate(mActivity, R.layout.activity_home, null);
+		mRootView = View.inflate(mActivity, R.layout.activity_home, null);
 		init();
 		
 		//商品添加
@@ -65,18 +65,18 @@ public class HomePager extends BasePager{
 		
 //		new BaseGetLocation().startGetLocation();
 //		mTvLocation.setText(BaseGetLocation.gettedLocation);
-		return rootView;
+		return mRootView;
 	}
 	
 	/**
 	 * 初始化数据
 	 */
 	private void init(){
-		gvHome = (GridView) rootView.findViewById(R.id.gvHome);
-		gvJiNeng = (GridView) rootView.findViewById(R.id.gvJineng);
-		mTvLocation = (MarqueeTextView) rootView.findViewById(R.id.tv_main_location);
-		mSearchBox = (EditText) rootView.findViewById(R.id.index_search_edit);
-		flContent = (FrameLayout) rootView.findViewById(R.id.fl_content);
+		gvHome = (GridView) mRootView.findViewById(R.id.gvHome);
+		gvJiNeng = (GridView) mRootView.findViewById(R.id.gvJineng);
+		mTvLocation = (MarqueeTextView) mRootView.findViewById(R.id.tv_main_location);
+		mSearchBox = (EditText) mRootView.findViewById(R.id.index_search_edit);
+		flContent = (FrameLayout) mRootView.findViewById(R.id.fl_content);
 		
 		mItems = new String[]{"美食","饮品","果蔬生鲜",
 				"花草/宠物","衣/包/鞋/饰","美妆/护理","数码/居家","图文办公"};

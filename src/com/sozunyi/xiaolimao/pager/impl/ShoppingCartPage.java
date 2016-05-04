@@ -15,7 +15,9 @@ public class ShoppingCartPage extends BasePager {
 
 	@Override
 	public View initViews() {
-		return flContent;
+		mRootView = View.inflate(mActivity, R.layout.activity_cart, null);
+		
+		return mRootView;
 	}
 
 }

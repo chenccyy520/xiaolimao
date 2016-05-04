@@ -24,25 +24,24 @@ public class PersonalPage extends BasePager {
 	
 	public PersonalPage(Activity activity) {
 		super(activity);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public View initViews() {
-		rootView = View.inflate(mActivity, R.layout.activity_personal, null);
+		mRootView = View.inflate(mActivity, R.layout.activity_personal, null);
 		findViewById();
 		setValue();
 		clickListener();
-		return rootView;
+		return mRootView;
 	}
 	
 	protected void findViewById() {
-		piv_personalinfo = (PersonalItemView) rootView.findViewById(R.id.piv_personalinfo);
-		piv_adress=(PersonalItemView) rootView.findViewById(R.id.piv_adress);
-		piv_shoucang = (PersonalItemView) rootView.findViewById(R.id.piv_shoucang);
-		piv_woyaokaidian = (PersonalItemView) rootView.findViewById(R.id.piv_woyaokaidian);
-		piv_fuwuzhongxin = (PersonalItemView) rootView.findViewById(R.id.piv_fuwuzhongxin);
-		piv_setting = (PersonalItemView) rootView.findViewById(R.id.piv_setting);
+		piv_personalinfo = (PersonalItemView) mRootView.findViewById(R.id.piv_personalinfo);
+		piv_adress=(PersonalItemView) mRootView.findViewById(R.id.piv_adress);
+		piv_shoucang = (PersonalItemView) mRootView.findViewById(R.id.piv_shoucang);
+		piv_woyaokaidian = (PersonalItemView) mRootView.findViewById(R.id.piv_woyaokaidian);
+		piv_fuwuzhongxin = (PersonalItemView) mRootView.findViewById(R.id.piv_fuwuzhongxin);
+		piv_setting = (PersonalItemView) mRootView.findViewById(R.id.piv_setting);
 	}
 	
 	protected void setValue() {

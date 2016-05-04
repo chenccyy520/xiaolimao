@@ -20,8 +20,9 @@ public class OrderPage extends BasePager {
 
 	@Override
 	public View initViews() {
-		return flContent;
+		mRootView = View.inflate(mActivity, R.layout.activity_orders, null);
 		
+		return mRootView;
 	}
 	
 	

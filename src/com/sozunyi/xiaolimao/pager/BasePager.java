@@ -13,13 +13,13 @@ import android.widget.FrameLayout;
 public abstract  class BasePager {
 
 	public Activity mActivity;
-	public View rootView;// 布局对象
+	public View mRootView;// 布局对象
 
 	public FrameLayout flContent;// 内容
 	
 	public BasePager(Activity activity) {
 		mActivity = activity;
-		rootView = initViews();
+		mRootView = initViews();
 	}
 
 	/**
