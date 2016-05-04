@@ -1,0 +1,146 @@
+<resources>
+
+    <string name="app_name">小狸猫</string>
+    <string name="splash_version_info">小狸猫客户端\n\nVersion 1.0.0</string>
+    <string name="index_search_edit_hint">请输入商家、商品名称</string>
+    
+    
+    <string name="location_input">请输入地址</string>
+    <string name="courent_location">当前地址</string>
+    <string name="my_adress">我的收货地址</string>
+    <string name="re_location">重新定位</string>
+
+    <!-- 菜单 -->
+    <string name="menu_setting">设置</string>
+    <string name="menu_history">浏览历史</string>
+    <string name="menu_feedback">意见反馈</string>
+    <string name="menu_help">帮助</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_exit">退出</string>
+    <!-- 菜单 -->
+
+    <!-- 首页 -->
+    <string name="goods">商品</string>
+    <string name="serach_goods">搜索商品或商家</string>
+    <string name="serach">搜索</string>
+    <string name="jineng">技能</string>
+    <!-- 首页 -->
+
+<!-- 商品分类 -->
+<string name="category">全部分类</string>
+<!-- 二维码 -->
+<string name="scan_tip">请将二维码置于取景框内扫描</string>
+<string name="scan_retry">二维码扫描出错啦,请重新扫描</string>
+    <string name="scan_title">扫一扫</string>
+    <!-- 个人中心 -->
+    <string name="personal_title">我的</string>
+    <string name="personal_login">立即登陆</string>
+    <string name="personal_msg">登陆后可享受更多特权</string>
+    <string name="personal_info">个人信息</string>
+    <string name="personal_adress">收货地址</string>
+    <string name="personal_woyaokaidian">我要开店</string>
+    <string name="personal_fuwuzhongxin">服务中心</string>
+    <string name="personal_seting">设置</string>
+    <string name="personal_update">修改</string>
+    
+    <string name="personal_nickname">昵称</string>
+    <string name="personal_xingbie">性别</string>
+    <string name="personal_shengri">生日</string>
+    <string name="personal_password">登陆密码</string>
+    <string name="personal_zhanghaobangding">帐号绑定</string>
+    <string name="personal_phone">手机</string>
+    <string name="personal_weixin">微信</string>
+    <string name="personal_QQ">QQ</string>
+    <string name="personal_weibo">微博</string>
+    <string name="personal_quit">退出账号</string>
+    <!-- 个人中心 -->
+
+<!-- 搜索 -->
+    <string name="search_info">暂无搜索历史</string>
+    <string name="search_remen">热门搜索</string>
+<!-- 搜索 -->  
+
+<!-- 地址 -->
+    <string name="default_adress">默认地址</string>
+    <string name="change_default">设为默认</string>
+    <string name="delete_adress">删除</string>
+    <string name="edit_adress">编辑</string>
+    <string name="update_adress">修改地址</string>
+    <string name="add_adress">新增地址</string>
+    <string name="contact_adress">联系人</string>
+    <string name="phone_adress">手机号</string>
+    <string name="street_adress">街道</string>
+    <string name="select_adress">请选择</string>
+    <string name="xiangxi_adress">详细地址</string>
+    <string name="OK">确定</string>
+<!-- 地址 --> 
+
+<!-- 服务中心 -->
+    <string name="server_center">服务中心</string>
+<!-- 服务中心 -->
+
+<!-- 登陆界面 -->
+    <string name="login">登录</string>
+    <string name="loginacount">账号名：</string>
+    <string name="loginpassword">密   码：</string>
+    <string name="inputpassword">请输入密码</string>
+    <string name="inputaccount">请输入账号</string>
+    <string name="register">快速注册</string>
+    <string name="login_btn">登   录</string>
+    <string name="find_password">找回密码</string>
+    <string name="usecooperationaccount">用合作网站帐户登录</string>
+    <string name="registerfree">免费注册</string>
+    <string name="login_loading">正在登錄，請稍候。。</string>
+    
+    
+<!--  购物车 -->
+    <string name="cart">购物车</string>
+    <string name="cartinfo_no">您的购物车是空的，快去选购吧！</string>
+    <string name="cartinfo_synchronous">购物车同步中</string>
+    <string name="cart_logininfo">您可以在登录后系统后同步电脑与手机购物 \n车中的商品</string>
+    <string name="cart_market">促销大卖场</string>
+    
+<!--   更多 -->
+<string name="more">更多</string>
+
+<string name="more_history">浏览记录</string>
+<string name="more_seting">设置</string>
+<string name="more_help">帮助 </string>
+<string name="more_opinion">意见反馈</string>
+<string name="more_aboutus">关于我们</string>
+<string name="more_update">检测更新</string>
+<string name="more_exit">退出</string>
+<string name="more_apps">应用推荐</string>
+
+
+<!-- 注册 -->
+<string name="registerinfo">输入手机号后，点击"获取密码"，系统会自动向你的手机发送一条短信</string>
+<string name="register_tip">【提示】\n 1.使用手机号注册免费 \n 2.此手机号用来登录京东\n 3.你还可以选择其他注册方式</string>
+<string name="register_in_normal">普通用户注册</string>
+<string name="register_normal_useraccount">帐户名：</string>
+<string name="register_normal_useraccount_hint">请输入你的手机号</string>
+<string name="register_normal_email">邮箱：</string>
+<string name="register_normal_email_hint">请输入邮箱帐号</string>
+<string name="register_normal_password">密码：</string>
+<string name="register_normal_password_hint">请输入密码</string>
+<string name="register_normal_repassword">确认密码：</string>
+<string name="register_normal_repassword_hint">请输入确认密码</string>
+
+    <!-- JazzyViewPager -->
+    <string-array name="jazzy_effects">
+        <item>Standard</item>
+        <item>Tablet</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>FlipVertical</item>
+        <item>FlipHorizontal</item>
+        <item>Stack</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+    <!-- JazzyViewPager -->
+
+</resources>

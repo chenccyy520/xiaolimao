@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sozunyi= "http://schemas.android.com/apk/res/com.sozunyi.xiaolimao"
+    android:id="@+id/layout_personal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/personal_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:orientation="vertical" >
+        
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+	    >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/personal_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bear"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            />
+        </RelativeLayout>
+        
+     <com.sozunyi.xiaolimao.view.PersonalLoginView
+        android:id="@+id/plv_login"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "立即登陆"
+    	sozunyi:desc= "登陆后享有更多特权"
+        />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        >
+   <com.sozunyi.xiaolimao.view.PersonalItemView
+        android:id="@+id/piv_personalinfo"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "个人信息"
+        />
+    
+      <com.sozunyi.xiaolimao.view.PersonalItemView
+        android:id="@+id/piv_adress"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "收货地址"
+        />
+      
+      <com.sozunyi.xiaolimao.view.PersonalItemView
+        android:id="@+id/piv_shoucang"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "我的收藏"
+        />
+      </LinearLayout>
+         
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        > 
+      <com.sozunyi.xiaolimao.view.PersonalItemView
+        android:id="@+id/piv_woyaokaidian"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "我要开店/商家后台"
+        />
+      <com.sozunyi.xiaolimao.view.PersonalItemView
+        android:id="@+id/piv_fuwuzhongxin"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "服务中心"
+        />
+       <com.sozunyi.xiaolimao.view.PersonalItemView
+        android:id="@+id/piv_setting"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "设置"
+        />
+                  
+    </LinearLayout>
+
+</LinearLayout>

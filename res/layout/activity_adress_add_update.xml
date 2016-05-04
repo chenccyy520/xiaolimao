@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sozunyi= "http://schemas.android.com/apk/res/com.sozunyi.xiaolimao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee" >
+
+<com.sozunyi.xiaolimao.view.TitleBarView
+    android:id="@+id/tbv_adress_add"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+	    sozunyi:title="@string/personal_info"
+	    />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center" >
+        <TextView
+            android:id="@+id/tv_add_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="@string/contact_adress"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size" />
+        
+         <EditText
+            android:id="@+id/et_shouhuoren"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tv_add_name"
+            android:background="#00000000"
+            android:hint="请输入收件人"
+            android:textSize="@dimen/medium_text_size" />
+    </LinearLayout>
+
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center" >
+         
+        <TextView
+            android:id="@id/tv_add_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="@string/phone_adress"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size" />
+         
+        <EditText
+            android:id="@+id/et_shoujihaoma"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#00000000"
+            android:hint="请输入电话"
+            android:textSize="@dimen/medium_text_size" />
+
+    </LinearLayout>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center" >
+
+         <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="@string/street_adress"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size" />
+        <EditText
+            android:id="@+id/EditText01"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#00000000"
+            android:hint="街道"
+            android:textSize="@dimen/medium_text_size" />
+        <Button
+	        android:layout_width="60dp"
+	        android:layout_height="22dp"
+	        android:layout_marginRight="10dp"
+	        android:background="#00000000"
+	        android:drawableRight="@drawable/screensavers_icon_jian_light"
+	        android:textColor="@color/white"
+	         />
+    </LinearLayout>
+
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center" >
+
+         <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="@string/xiangxi_adress"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/small_middle_text_size" />
+
+        <EditText
+            android:id="@+id/EditText02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#00000000"
+            android:hint="请输入具体地址"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/small_middle_text_size" />
+
+    </LinearLayout>
+    
+ 	<Button
+        android:id="@+id/btn_add_adress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_green"
+        android:text="@string/OK"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+</LinearLayout>

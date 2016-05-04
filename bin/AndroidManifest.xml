@@ -1,0 +1,83 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sozunyi.xiaolimao"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name="com.sozunyi.xiaolimao.baidu.LocationApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>        
+                <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="YZSskIu63pxlAKZP2Tt9336rZ8xETSzq" />  <!--http://lbsyun.baidu.com/apiconsole/key-->
+        
+        <activity
+            android:name="com.sozunyi.xiaolimao.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.sozunyi.xiaolimao.activity.HomeActivity"/>
+        <activity android:name="com.sozunyi.xiaolimao.common.BaseGetLocation"/>
+        <activity android:name="com.sozunyi.xiaolimao.activity.MainActivity" />
+        <activity android:name="com.sozunyi.xiaolimao.activity.IndexActivity"/>
+        <activity android:name="com.sozunyi.xiaolimao.activity.CategoryActivity"/>
+        <activity android:name="com.sozunyi.xiaolimao.activity.CartActivity"/>
+        <activity android:name="com.sozunyi.xiaolimao.activity.PersonalInfoActivity"/>
+        <activity android:name="com.sozunyi.xiaolimao.activity.SearchActivity"/>
+        <activity android:name="com.sozunyi.xiaolimao.activity.LocationActivity" /> 
+        <activity android:name="com.sozunyi.xiaolimao.activity.AdressActivity" />
+        <activity android:name="com.sozunyi.xiaolimao.activity.AddAdressActivity" />
+        <activity android:name="com.sozunyi.xiaolimao.activity.UpdateAdressActivity" />
+        <activity android:name="com.sozunyi.xiaolimao.activity.SettingActivity" />
+        <activity android:name="com.sozunyi.xiaolimao.activity.CollectionActivity" />
+        
+    </application>
+
+</manifest>

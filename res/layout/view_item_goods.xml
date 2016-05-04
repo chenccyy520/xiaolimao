@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+	   android:layout_height="60dp"
+	   android:layout_margin="5dp"
+	   >
+	   <RelativeLayout
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:id="@+id/lay_goods_img"
+	       >
+	   <ImageView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/box"
+		     />
+	   <ImageView
+		        android:id="@+id/iv_goods_img"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/goods"
+		        android:layout_margin="2px"
+		     />
+	   </RelativeLayout>
+	    <TextView
+		        android:id="@+id/tv_goods_name"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:text="香辣猪蹄子"
+		        android:textColor="@color/gray1"
+		        android:layout_toRightOf="@id/lay_goods_img"
+		     />
+	    
+	     <TextView
+		        android:id="@+id/tv_goods_price"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/tv_goods_name"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginTop="4dp"
+		        android:layout_centerVertical="true"
+		        android:text="￥222"
+		        android:textColor="@color/gray1"
+		        android:layout_toRightOf="@id/lay_goods_img"
+		     />
+ 		<TextView
+		        android:id="@+id/tv_goods_count"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/tv_goods_name"
+		        android:layout_marginRight="5dp"
+		        android:layout_marginTop="4dp"
+		        android:layout_centerVertical="true"
+		        android:layout_alignParentRight="true"
+		        android:text="x 1"
+		        android:textColor="@color/gray1"
+		     />
+
+</RelativeLayout>

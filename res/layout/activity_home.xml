@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout 
+        
+        android:background="@drawable/title_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/index_top_layout"
+        android:orientation="vertical">
+     <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+	    <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/dinwei"
+	        android:layout_marginLeft="20dp"
+	        android:layout_gravity="center_vertical"
+	        />
+	    
+	     <com.sozunyi.xiaolimao.view.MarqueeTextView
+	        android:id="@+id/tv_main_location"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:ellipsize="marquee"
+        	android:scrollHorizontally="true"
+	        android:text="汇川区宁波路咖啡豆酒店"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="15dp"
+	        android:textSize="20sp"
+	        android:clickable="true"
+	        android:textColor="#ffffff"
+	        />
+	     <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_marginRight="15dp"
+	        android:background="@drawable/sanjiaoxing"
+	        />
+	     </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/index_search_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_box"
+            android:drawableRight="@drawable/search_box_icon"
+            android:hint="@string/serach_goods"
+            android:padding="6dp"
+            android:focusable="false"
+            android:onClick="searchBoxOnClick"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</LinearLayout>
+
+    <com.sozunyi.xiaolimao.widgets.AbScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/index_top_layout"
+        android:background="@drawable/home_panicbuying_background"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#eeeeee"
+            android:layout_gravity="top"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="vertical" >
+					<TextView
+					        android:layout_width="70dp"
+					        android:layout_height="wrap_content"
+					        android:text="@string/goods"
+					        android:layout_marginTop="8dp"
+					        android:gravity="right"
+					        android:layout_marginLeft="5dp"
+					        android:drawableLeft="@drawable/list"
+					        android:textSize="19sp"
+					        android:textColor="#000"
+					        />
+                    <GridView
+					        android:id="@+id/gvHome"
+					        android:layout_width="match_parent"
+					        android:layout_height="220dp"
+					        android:verticalSpacing="20dp"
+					        android:horizontalSpacing="10dp"
+					        android:numColumns="4"
+					        android:layout_gravity="center_vertical"
+					        android:gravity="center"
+					        >  
+					   		 </GridView>
+
+            </LinearLayout>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                android:orientation="vertical" >
+					<TextView
+					        android:layout_width="70dp"
+					        android:layout_height="wrap_content"
+					        android:text="@string/jineng"
+					        android:gravity="right"
+					        android:layout_marginLeft="5dp"
+					        android:drawableLeft="@drawable/list"
+					        android:textSize="19sp"
+					        android:textColor="#000"
+					        />
+                    <GridView
+					        android:id="@+id/gvJineng"
+					        android:layout_width="match_parent"
+					        android:layout_height="220dp"
+					        android:verticalSpacing="20dp"
+					        android:horizontalSpacing="10dp"
+					        android:numColumns="4"
+					        android:layout_gravity="center_vertical"
+					        android:gravity="center"
+					        >  
+					   		 </GridView>
+			</LinearLayout>
+        </LinearLayout>
+    </com.sozunyi.xiaolimao.widgets.AbScrollView>
+
+</RelativeLayout>

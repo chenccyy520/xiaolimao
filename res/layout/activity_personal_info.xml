@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sozunyi= "http://schemas.android.com/apk/res/com.sozunyi.xiaolimao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" 
+    android:orientation="vertical"
+    >
+
+	<com.sozunyi.xiaolimao.view.TitleBarView
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+	    sozunyi:title="个人信息"
+	    />
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        >
+   	  <com.sozunyi.xiaolimao.view.PersonalItemInfoView
+        android:id="@+id/piv_personal_nickname"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "昵称"
+    	sozunyi:value= "冰雨"
+        />
+    
+      <com.sozunyi.xiaolimao.view.PersonalItemInfoView
+        android:id="@+id/piv_personal_xingbie"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "性别"
+    	sozunyi:value= "男"
+        />
+      
+      <com.sozunyi.xiaolimao.view.PersonalItemInfoView
+        android:id="@+id/piv_personal_shengri"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "生日"
+    	sozunyi:value= "1989-11-27"
+        />
+      
+      <com.sozunyi.xiaolimao.view.PersonalItemInfoView
+        android:id="@+id/piv_personal_password"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "登陆密码"
+    	sozunyi:value= ""
+        />
+      </LinearLayout>
+         
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        > 
+        
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:background="#fff"
+        >
+      <TextView
+		        android:id="@+id/iv_item_name"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_marginLeft="15dp"
+		        android:layout_centerVertical="true"
+		        android:gravity="center"
+		        android:textSize="18sp"
+		        android:text="@string/personal_zhanghaobangding"
+		        android:textColor="@color/black"
+		        />
+    		<View
+		        android:layout_width="match_parent"
+		        android:layout_height="0.2dp"
+		        android:background="#eeeeee"
+		        />
+      </LinearLayout>
+    		
+      <com.sozunyi.xiaolimao.view.PersonalItemInfoView
+        android:id="@+id/piv_fuwuzhongxin"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "手机"
+    	sozunyi:value= "185****8976"
+        />
+       <com.sozunyi.xiaolimao.view.PersonalItemInfoView
+        android:id="@+id/piv_setting"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	sozunyi:title= "微信"
+    	sozunyi:value= ""
+        />
+                  
+    </LinearLayout>
+    
+
+	
+        
+</LinearLayout>
