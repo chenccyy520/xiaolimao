@@ -299,8 +299,11 @@
     <color name="blueLight">#0084ff</color>
     <!-- 淡蓝色 -->
     
-      <color name="gray1">#555555</color>
-    <!-- 淡蓝色 -->
+    <color name="gray1">#555555</color>
+    <!-- 灰色 -->
+    
+    <color name="chengse">#ff4d00</color>
+    <!-- 橙色 -->
     
     
     <color name="black">#000</color>

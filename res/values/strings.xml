@@ -60,6 +60,22 @@
     <string name="search_remen">热门搜索</string>
 <!-- 搜索 -->  
 
+<!-- 我要开店 -->
+    <string name="shop_realname">真实姓名</string>
+    <string name="shop_ID">身份证号</string>
+    <string name="shop_realn_certification">实名认证</string>
+    <string name="shop_perfect">完善名片</string>
+    <string name="shop_in_background">进入后台</string>
+    <string name="shop_submit">提交</string>
+    <string name="shop_topic">温馨提示：实名认证代表您同意</string>
+    <string name="shop_name">店名</string>
+    <string name="shop_phone">电话</string>
+    <string name="shop_open_time">营业时间</string>
+    <string name="shop_peisong">配送范围</string>
+    <string name="shop_bangding">绑定收款</string>
+    <string name="shop_publish">发布商品/服务</string>
+<!-- 我要开店 --> 
+
 <!-- 地址 -->
     <string name="default_adress">默认地址</string>
     <string name="change_default">设为默认</string>
@@ -115,7 +131,7 @@
 
 <!-- 注册 -->
 <string name="registerinfo">输入手机号后，点击"获取密码"，系统会自动向你的手机发送一条短信</string>
-<string name="register_tip">【提示】\n 1.使用手机号注册免费 \n 2.此手机号用来登录京东\n 3.你还可以选择其他注册方式</string>
+<string name="register_tip">【提示】\n 1.使用手机号注册免费 \n 2.此手机号用来登录小狸猫\n 3.你还可以选择其他注册方式</string>
 <string name="register_in_normal">普通用户注册</string>
 <string name="register_normal_useraccount">帐户名：</string>
 <string name="register_normal_useraccount_hint">请输入你的手机号</string>
@@ -125,22 +141,5 @@
 <string name="register_normal_password_hint">请输入密码</string>
 <string name="register_normal_repassword">确认密码：</string>
 <string name="register_normal_repassword_hint">请输入确认密码</string>
-
-    <!-- JazzyViewPager -->
-    <string-array name="jazzy_effects">
-        <item>Standard</item>
-        <item>Tablet</item>
-        <item>CubeIn</item>
-        <item>CubeOut</item>
-        <item>FlipVertical</item>
-        <item>FlipHorizontal</item>
-        <item>Stack</item>
-        <item>ZoomIn</item>
-        <item>ZoomOut</item>
-        <item>RotateUp</item>
-        <item>RotateDown</item>
-        <item>Accordion</item>
-    </string-array>
-    <!-- JazzyViewPager -->
 
 </resources>

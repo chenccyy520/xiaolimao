@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sozunyi= "http://schemas.android.com/apk/res/com.sozunyi.xiaolimao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee" >
+        
+    <com.sozunyi.xiaolimao.view.TitleBarView
+    android:id="@+id/tbv_adress_add"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+	    sozunyi:title="商家后台"
+	    />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/title_bg"
+        android:orientation="vertical">
+     <TextView
+            android:id="@+id/tv_add_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="李家豆腐脑"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    
+	</RelativeLayout>
+	
+   
+ 	
+</LinearLayout>

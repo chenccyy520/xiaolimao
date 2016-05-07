@@ -3,8 +3,10 @@ package com.sozunyi.xiaolimao.pager.impl;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -91,6 +93,24 @@ public class HomePager extends BasePager{
 		mPicjnID = new int[]{R.drawable.home_zhuangxiu,R.drawable.home_jiazheng,R.drawable.home_shutong,
 				R.drawable.home_caijian,R.drawable.home_peilian,R.drawable.home_sheying,
 				R.drawable.home_zuoye,R.drawable.home_suanming};
+		
+		//不让滚动
+		gvHome.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				return MotionEvent.ACTION_MOVE == event.getAction() ? true
+                        : false;
+			}
+		});
+		gvJiNeng.setOnTouchListener(new OnTouchListener() {
+					
+					@Override
+					public boolean onTouch(View v, MotionEvent event) {
+						return MotionEvent.ACTION_MOVE == event.getAction() ? true
+		                        : false;
+					}
+				});
 	}
 	
 	/**

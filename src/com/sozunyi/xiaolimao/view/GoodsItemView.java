@@ -1,36 +1,26 @@
 package com.sozunyi.xiaolimao.view;
 
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
 import com.sozunyi.xiaolimao.R;
-import com.sozunyi.xiaolimao.activity.UpdateAdressActivity;
 import com.sozunyi.xiaolimao.entity.GoodsInfo;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
+/**
+ * 商品布局自定义控件
+ * @author chen
+ *
+ */
 public class GoodsItemView extends RelativeLayout {
 
-	@ViewInject(R.id.iv_goods_img)
 	private ImageView ivImg;
-	@ViewInject(R.id.tv_goods_name)
 	private TextView tvGoodsName;
-	@ViewInject(R.id.tv_goods_count)
 	private TextView tvCount;
-	@ViewInject(R.id.tv_goods_price)
 	private TextView tvPrice;
+	
 	private GoodsInfo goodsInfo;
 	
 	public GoodsItemView(Context context, AttributeSet attrs, int defStyle) {
@@ -49,11 +39,18 @@ public class GoodsItemView extends RelativeLayout {
 		initView(context);
 	}
 	/**
-	 * 
+	 * 初始化布局
 	 */
 	private void initView(final Context context){
-		View v = View.inflate(getContext(), R.layout.view_item_adress, this);
-		ViewUtils.inject(v);
+		View v = View.inflate(getContext(), R.layout.view_item_goods, this);
+		findView(v);
+	}
+	
+	private void findView(View v){
+		ivImg = (ImageView) v.findViewById(R.id.iv_goods_img);
+		tvGoodsName = (TextView) v.findViewById(R.id.tv_goods_name);
+		tvCount = (TextView) v.findViewById(R.id.tv_goods_count);
+		tvPrice = (TextView) v.findViewById(R.id.tv_goods_price);
 	}
 
 	public GoodsInfo getGoodsInfo() {
@@ -64,8 +61,15 @@ public class GoodsItemView extends RelativeLayout {
 		this.goodsInfo = goodsInfo;
 	}
 	
+	/**
+	 * 设置基本显示数据
+	 * @param goodsInfo
+	 */
 	public void setGoodsValue(GoodsInfo goodsInfo){
-		
+		this.goodsInfo = goodsInfo;
+		tvGoodsName.setText(goodsInfo.getGoodsName());
+		tvCount.setText("X "+String.valueOf(goodsInfo.getCount()));
+		tvPrice.setText("￥"+String.valueOf(goodsInfo.getPrice()));
 	}
 	
 }

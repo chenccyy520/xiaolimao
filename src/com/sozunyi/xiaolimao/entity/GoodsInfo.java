@@ -36,4 +36,5 @@ public class GoodsInfo {
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
+	
 }

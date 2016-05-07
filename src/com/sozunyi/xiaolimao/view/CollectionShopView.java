@@ -5,6 +5,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.sozunyi.xiaolimao.R;
 import com.sozunyi.xiaolimao.activity.UpdateAdressActivity;
 import com.sozunyi.xiaolimao.entity.CollectionShop;
+import com.sozunyi.xiaolimao.view.AdressItemView.ImyCallBack;
 
 import android.content.Context;
 import android.content.Intent;
@@ -47,9 +48,28 @@ public class CollectionShopView extends LinearLayout {
 	@ViewInject(R.id.btn_gonggao)
 	private Button btnNotice;//公告
 	@ViewInject(R.id.btn_fanwei_shoucang)
-	private Button btnRange;
+	private Button btnRange;//区域
+	@ViewInject(R.id.btn_shoucang)
+	private Button btnCollection;//收藏
 	
 	private CollectionShop collectionShop;
+	
+	public interface ImyCallBack{
+		public void onNoticeClick(View v);
+		public void onRangeClick(View v);	
+		public void onCollectionClick(View v);
+	}
+	
+	 /**  初始化接口变量   */  
+    ImyCallBack icallBack = null;  
+      
+    /** 自定义控件的自定义事件 
+     * @param iBack 接口类型 
+     */  
+    public void setonClick(ImyCallBack iBack)  
+    {  
+        icallBack = iBack;  
+    }  
 
 		
 	public CollectionShop getCollectionShop() {
@@ -82,10 +102,36 @@ public class CollectionShopView extends LinearLayout {
 	private void initView(final Context context){
 		View v = View.inflate(getContext(), R.layout.view_item_collection, this);
 		ViewUtils.inject(v); //注入VIEW事件
-
+		btnNotice.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				icallBack.onNoticeClick(v);
+			}
+		});
+		
+		btnRange.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				icallBack.onRangeClick(v);
+			}
+		});
+		
+		btnCollection.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				icallBack.onCollectionClick(v);
+			}
+		});
 	}
 	
-	public void SetVilue(CollectionShop collectionShop){
+	/**
+	 * 设置显示值
+	 * @param collectionShop
+	 */
+	public void setCollectVilue(CollectionShop collectionShop){
 		mShopName.setText(collectionShop.getShopName().toString());
 		tvPhone.setText(collectionShop.getPhone().toString());
 		tvShopAdress.setText(collectionShop.getShopAdress().toString());

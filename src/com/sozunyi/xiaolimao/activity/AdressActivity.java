@@ -1,22 +1,12 @@
 package com.sozunyi.xiaolimao.activity;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
+import android.os.SystemClock;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -27,24 +17,30 @@ import com.sozunyi.xiaolimao.R;
 import com.sozunyi.xiaolimao.activity.base.BaseActivity;
 import com.sozunyi.xiaolimao.adapter.AdressAdapter;
 import com.sozunyi.xiaolimao.entity.AdressInfo;
-import com.sozunyi.xiaolimao.view.AdressItemView;
+import com.sozunyi.xiaolimao.view.RefreshListView;
+import com.sozunyi.xiaolimao.view.RefreshListView.OnRefreshListener;
 
 public class AdressActivity extends BaseActivity {
 	
-	private String mName;
-	private String mPhone;
-	private String mAdress;
-	
 	private AdressAdapter adapter;
-	private LinearLayout lay_adress_item;
-    private List<AdressInfo> adressInfos;	
+	private RefreshListView refreshListView_adress;
+    private ArrayList<AdressInfo> adressInfos;	
+    
+    private Handler handler = new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			//更新UI
+			adapter.notifyDataSetChanged();
+			refreshListView_adress.completeRefresh();
+		};
+	};
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_personal_adress);
 		
-		lay_adress_item = (LinearLayout) findViewById(R.id.lay_adress_item);
-		//initUI();
+		refreshListView_adress = (RefreshListView) findViewById(R.id.refreshListView_adress);
+		
 		initData();
 	}
 	
@@ -66,39 +62,46 @@ public class AdressActivity extends BaseActivity {
 						
 					}
 		 });
-		 
-		 mName = "刘郴榆";
-	 	 mPhone = "18798125204";
-	 	 mAdress = "贵州省遵义市汇川区上海路830号";
-		 AdressItemView view1 = new AdressItemView(this);
-		 view1.setName(mName);
-		 view1.setPhone(mPhone);
-		 view1.setAdress(mAdress);
-		 view1.setAddStatesFromChildren(true);
-		 lay_adress_item.addView(view1, 0);
-    	
-    	mName = "陈昌政";
- 		mPhone = "17098895202";
- 		mAdress = "贵州省遵义市红花岗区中华路890号";
- 		
-    	AdressItemView view2 = new AdressItemView(this);
-		view2.setName(mName);
-		view2.setPhone(mPhone);
-		view2.setAdress(mAdress);
-		view2.setAddStatesFromChildren(false);
-		lay_adress_item.addView(view2, 1);		
- 		
- 		mName = "小明";
- 		mPhone = "17098895202";
- 		mAdress = "贵州省贵阳市观山湖区中华路890号";
- 		AdressItemView view3 = new AdressItemView(this);
-		view3.setName(mName);
-		view3.setPhone(mPhone);
-		view3.setAdress(mAdress);
-		view3.setAddStatesFromChildren(false);
- 		
-		lay_adress_item.addView(view3, 2);
+		 adressInfos = new  ArrayList<AdressInfo>();
+		 for(int i=0;i<4;i++){
+		 AdressInfo adressInfo = new AdressInfo();
+		 adressInfo.setName("刘郴榆");
+		 adressInfo.setPhone("18798125204");
+		 adressInfo.setAdress("贵州省遵义市汇川区上海路830号");
+		 adressInfos.add(adressInfo);
+		 }
+		 adapter = new AdressAdapter(adressInfos, this);
+		 refreshListView_adress.setAdapter(adapter);
+		 refreshListView_adress.setOnRefreshListener(new OnRefreshListener() {
+				@Override
+				public void onPullRefresh() {
+					//需要联网请求服务器的数据，然后更新UI
+					requestDataFromServer(false);
+				}
+			});
+
  	}
+	
+	/**
+	 * 模拟向服务器请求数据
+	 */
+	private void requestDataFromServer(final boolean isLoadingMore){
+		new Thread(){
+			public void run() {
+				SystemClock.sleep(3000);//模拟请求服务器的一个时间长度
+				for(int i=0;i<4;i++){
+					 AdressInfo adressInfo = new AdressInfo();
+					 adressInfo.setName("陈昌政");
+					 adressInfo.setPhone("18798125204");
+					 adressInfo.setAdress("贵州省遵义市汇川区上海路830号");
+					 adressInfos.add(adressInfo);
+					 }
+				
+				//在UI线程更新UI
+				handler.sendEmptyMessage(0);
+			};
+		}.start();
+	}
 	
 	private void initUI() {
         

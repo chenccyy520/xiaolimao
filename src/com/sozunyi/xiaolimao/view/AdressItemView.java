@@ -2,6 +2,8 @@ package com.sozunyi.xiaolimao.view;
 
 import com.sozunyi.xiaolimao.R;
 import com.sozunyi.xiaolimao.activity.UpdateAdressActivity;
+import com.sozunyi.xiaolimao.entity.AdressInfo;
+import com.sozunyi.xiaolimao.view.OrdersItemView.ImyCallBack;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,48 +24,28 @@ public class AdressItemView extends RelativeLayout {
 	private TextView tvName;
 	private TextView tvPhone;
 	private TextView tvAdress;
-	private TextView tvID;
 	private CheckBox ckDefaultAdress;
 	private Button btnEdit;
 	private Button btnDelete;
 	
-	private String mAddressee;
-	private String mPhone;
-	private String mAdress;
-	int id;
+	private AdressInfo adressInfo;
 	
-	public String getmAddressee() {
-		return mAddressee;
-	}
-
-	public void setmAddressee(String mAddressee) {
-		this.mAddressee = mAddressee;
-	}
-
-	public String getmPhone() {
-		return mPhone;
-	}
-
-	public void setmPhone(String mPhone) {
-		this.mPhone = mPhone;
-	}
-
-	public String getmAdress() {
-		return mAdress;
-	}
-
-	public void setmAdress(String mAdress) {
-		this.mAdress = mAdress;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+	public interface ImyCallBack{
+		public void onEditClick(View v);
+		public void onDeleteClick(View v);
+		public void onDefaultCheckedChanged(CompoundButton buttonView, boolean isChecked);
 	}
 	
+	 /**  初始化接口变量   */  
+    ImyCallBack icallBack = null;  
+      
+    /** 自定义控件的自定义事件 
+     * @param iBack 接口类型 
+     */  
+    public void setonClick(ImyCallBack iBack)  
+    {  
+        icallBack = iBack;  
+    }  
 
 	public AdressItemView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
@@ -88,7 +70,6 @@ public class AdressItemView extends RelativeLayout {
 		tvName = (TextView) v.findViewById(R.id.iv_item_adress_name);
 		tvPhone = (TextView) v.findViewById(R.id.tv_item_adress_phone);
 		tvAdress = (TextView) v.findViewById(R.id.tv_item_adress);
-		tvID = (TextView) v.findViewById(R.id.tv_adress_id);
 		
 		ckDefaultAdress = (CheckBox) v.findViewById(R.id.ck_item_default);
 		btnEdit = (Button) v.findViewById(R.id.btn_item_edit);
@@ -98,51 +79,40 @@ public class AdressItemView extends RelativeLayout {
 			
 			@Override
 			public void onClick(View v) {
-				context.startActivity(new Intent(context,UpdateAdressActivity.class));
+				icallBack.onEditClick(v);
 			}
 		});
 		ckDefaultAdress.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				setDefaultAdressCleck(isChecked);
-				
+				icallBack.onDefaultCheckedChanged(buttonView, isChecked);
 			}
 		});
 		btnDelete.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Toast.makeText(context, "我点击了删除按钮", Toast.LENGTH_SHORT).show();
+				icallBack.onDeleteClick(v);
 			}
 		});
 	}
 	
 	/**
-	 * 设置收件人姓名
-	 * @param title
+	 * 设置控件显示内容
+	 * @param info
 	 */
-	public void setName(String name)
+	public void setAdressInfo(AdressInfo info)
 	{
-		tvName.setText(name);
+		if(info !=null){
+			this.adressInfo = info;
+			tvName.setText(adressInfo.getName());
+			tvPhone.setText(adressInfo.getPhone());
+			tvAdress.setText(adressInfo.getAdress());
+			setDefaultAdressCleck(adressInfo.getDefaultAdress());
+		}
 	}
 	
-	/**
-	 * 设置收件电话
-	 * @param value
-	 */
-	public void setPhone(String value){
-		tvPhone.setText(value);
-	}
-	
-	/**
-	 * 设置收件地址
-	 * @param a
-	 */
-	public void setAdress(String a){
-		tvAdress.setText(a);
-	}
 	/**
 	 * 设置默认选项框勾选状态
 	 * @param checked
@@ -167,6 +137,14 @@ public class AdressItemView extends RelativeLayout {
 			ckDefaultAdress.setTextColor(0xff555555);
 			ckDefaultAdress.setText("设为默认");
 		}
+	}
+
+	public AdressInfo getDressInfo() {
+		return adressInfo;
+	}
+
+	public void setDressInfo(AdressInfo dressInfo) {
+		this.adressInfo = dressInfo;
 	}
 
 }

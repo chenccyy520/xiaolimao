@@ -3,7 +3,7 @@
     android:fromDegrees="0"
     android:pivotX="50%"
     android:pivotY="50%"
-    android:drawable="@drawable/indicate_rotate"
+    android:drawable="@drawable/list_refresh"
     android:toDegrees="360">
     
 

@@ -33,30 +33,26 @@
 		        android:textColor="@color/gray1"
 		        android:layout_toRightOf="@id/lay_goods_img"
 		     />
-	    
-	     <TextView
-		        android:id="@+id/tv_goods_price"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_below="@id/tv_goods_name"
-		        android:layout_marginLeft="10dp"
-		        android:layout_marginTop="4dp"
-		        android:layout_centerVertical="true"
-		        android:text="￥222"
-		        android:textColor="@color/gray1"
-		        android:layout_toRightOf="@id/lay_goods_img"
-		     />
  		<TextView
 		        android:id="@+id/tv_goods_count"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:layout_below="@id/tv_goods_name"
-		        android:layout_marginRight="5dp"
-		        android:layout_marginTop="4dp"
-		        android:layout_centerVertical="true"
 		        android:layout_alignParentRight="true"
+		        android:layout_alignParentBottom="true"
+		        android:layout_marginRight="5dp"
+		        android:layout_marginBottom="7dp"
 		        android:text="x 1"
 		        android:textColor="@color/gray1"
 		     />
+
+ 		<TextView
+ 		    android:id="@+id/tv_goods_price"
+ 		    android:layout_width="wrap_content"
+ 		    android:layout_height="wrap_content"
+ 		    android:layout_alignLeft="@id/tv_goods_name"
+ 		    android:layout_marginTop="10dp"
+ 		    android:layout_below="@id/tv_goods_name"
+ 		    android:text="￥222"
+ 		    android:textColor="@color/gray1" />
 
 </RelativeLayout>

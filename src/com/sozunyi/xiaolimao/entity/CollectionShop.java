@@ -3,6 +3,7 @@ package com.sozunyi.xiaolimao.entity;
 public class CollectionShop {
 	private int ID;
 	private String shopName;
+	private int shopID;
 	private String notice;
 	private float star;
 	private String shopAdress;
@@ -11,6 +12,13 @@ public class CollectionShop {
 	private float distributionFee;
 	private String range;
 	private String openTime;
+	
+	public int getShopID() {
+		return shopID;
+	}
+	public void setShopID(int shopID) {
+		this.shopID = shopID;
+	}
 	
 	public int getID() {
 		return ID;
@@ -73,4 +81,5 @@ public class CollectionShop {
 	public void setOpenTime(String openTime) {
 		this.openTime = openTime;
 	}
+	
 }

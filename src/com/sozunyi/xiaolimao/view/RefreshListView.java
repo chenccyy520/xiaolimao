@@ -22,10 +22,7 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	private View headerView;//headerView
 	private ImageView iv_arrow;
 	private ProgressBar pb_rotate;
-	private TextView tv_state,tv_time;
-	private View footerView;
-	private int footerViewHeight;
-	
+	private TextView tv_state;
 	private int headerViewHeight;//headerView高
 	
 	private int downY;//按下时y坐标
@@ -37,8 +34,6 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	
 	private RotateAnimation upAnimation,downAnimation;
 	
-	private boolean isLoadingMore = false;//当前是否正在处于加载更多
-
 	public RefreshListView(Context context) {
 		super(context);
 		init();
@@ -53,7 +48,6 @@ public class RefreshListView extends ListView implements OnScrollListener{
 		setOnScrollListener(this);
 		initHeaderView();
 		initRotateAnimation();
-		initFooterView();
 	}
 
 
@@ -65,7 +59,6 @@ public class RefreshListView extends ListView implements OnScrollListener{
 		iv_arrow = (ImageView) headerView.findViewById(R.id.iv_arrow);
 		pb_rotate = (ProgressBar) headerView.findViewById(R.id.pb_rotate);
 		tv_state = (TextView) headerView.findViewById(R.id.tv_state);
-		tv_time = (TextView) headerView.findViewById(R.id.tv_time);
 		
 		headerView.measure(0, 0);//主动通知系统去测量该view;
 		headerViewHeight = headerView.getMeasuredHeight();
@@ -88,14 +81,6 @@ public class RefreshListView extends ListView implements OnScrollListener{
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		downAnimation.setDuration(300);
 		downAnimation.setFillAfter(true);
-	}
-	
-	private void initFooterView() {
-		footerView = View.inflate(getContext(), R.layout.layout_footer, null);
-		footerView.measure(0, 0);//主动通知系统去测量该view;
-		footerViewHeight = footerView.getMeasuredHeight();
-		footerView.setPadding(0, -footerViewHeight, 0, 0);
-		addFooterView(footerView);
 	}
 	
 	@Override
@@ -177,37 +162,21 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	 * 完成刷新操作，重置状态,在你获取完数据并更新完adater之后，去在UI线程中调用该方法
 	 */
 	public void completeRefresh(){
-		if(isLoadingMore){
-			//重置footerView状态
-			footerView.setPadding(0, -footerViewHeight, 0, 0);
-			isLoadingMore = false;
-		}else {
-			//重置headerView状态
-			headerView.setPadding(0, -headerViewHeight, 0, 0);
-			currentState = PULL_REFRESH;
-			pb_rotate.setVisibility(View.INVISIBLE);
-			iv_arrow.setVisibility(View.VISIBLE);
-			tv_state.setText("下拉刷新");
-			tv_time.setText("最后刷新："+getCurrentTime());
-		}
+		//重置headerView状态
+		headerView.setPadding(0, -headerViewHeight, 0, 0);
+		currentState = PULL_REFRESH;
+		pb_rotate.setVisibility(View.INVISIBLE);
+		iv_arrow.setVisibility(View.VISIBLE);
+		tv_state.setText("下拉刷新");
 	}
 	
-	/**
-	 * 获取当前系统时间，并格式化
-	 * @return
-	 */
-	private String getCurrentTime(){
-		SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-		return format.format(new Date());
-	}
-	
+
 	private OnRefreshListener listener;
 	public void setOnRefreshListener(OnRefreshListener listener){
 		this.listener = listener;
 	}
 	public interface OnRefreshListener{
 		void onPullRefresh();
-		void onLoadingMore();
 	}
 	
 	/**
@@ -218,15 +187,7 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
 		if(scrollState==OnScrollListener.SCROLL_STATE_IDLE 
-				&& getLastVisiblePosition()==(getCount()-1) &&!isLoadingMore){
-			isLoadingMore = true;
-			
-			footerView.setPadding(0, 0, 0, 0);//显示出footerView
-			setSelection(getCount());//让listview最后一条显示出来
-			
-			if(listener!=null){
-				listener.onLoadingMore();
-			}
+				&& getLastVisiblePosition()==(getCount()-1)){
 		}
 	}
 	@Override
