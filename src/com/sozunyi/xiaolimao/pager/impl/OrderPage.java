@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
 
 import com.sozunyi.xiaolimao.R;
+import com.sozunyi.xiaolimao.activity.OrderDetailsActivity;
 import com.sozunyi.xiaolimao.adapter.OrdersAdapter;
 import com.sozunyi.xiaolimao.entity.GoodsInfo;
 import com.sozunyi.xiaolimao.entity.OrdersInfo;
@@ -73,28 +77,7 @@ private RefreshListView refreshListView;
 			
 			lists.add(ordersInfo);
 		}
-		
-		
-//		final View headerView = View.inflate(this, R.layout.layout_header, null);
-		//第一种方法
-//		headerView.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-//			@Override
-//			public void onGlobalLayout() {
-//				headerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-//				int headerViewHeight = headerView.getHeight();
-//				
-//				
-//				Log.e("MainActivity", "headerViewHeight: "+headerViewHeight);
-//				headerView.setPadding(0, -headerViewHeight, 0, 0);
-//				refreshListView.addHeaderView(headerView);//
-//			}
-//		});
-		//第二种方法
-//		headerView.measure(0, 0);//主动通知系统去测量
-//		int headerViewHeight = headerView.getMeasuredHeight();
-//		Log.e("MainActivity", "headerViewHeight: "+headerViewHeight);
-//		headerView.setPadding(0, -headerViewHeight, 0, 0);
-//		refreshListView.addHeaderView(headerView);//
+
 		ordersAdapter = new OrdersAdapter(lists, mActivity);
 		refreshListView.setAdapter(ordersAdapter);
 		
@@ -105,6 +88,19 @@ private RefreshListView refreshListView;
 				requestDataFromServer(false);
 			}
 		});
+		refreshListView.setOnItemClickListener(new AbsListView.OnItemClickListener() {
+
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+					  int position, long id) {
+					System.out.println("我点击了这里的");
+					mActivity.startActivity(new Intent(mActivity,OrderDetailsActivity.class));
+					  //获取选中的项
+					  final OrdersInfo ordersInfo = (OrdersInfo) refreshListView.getItemAtPosition(position);
+					}
+	   	 });
+
+		
 	}
 	
 	/**

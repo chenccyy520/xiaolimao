@@ -2,10 +2,7 @@
 
 import java.util.Locale;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sozunyi.xiaolimao.AppManager;
-import com.sozunyi.xiaolimao.config.Constants;
-import com.sozunyi.xiaolimao.image.ImageLoaderConfig;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -27,9 +24,6 @@ public abstract class BaseActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		AppManager.getInstance().addActivity(this);
-		if (!ImageLoader.getInstance().isInited()) {
-			ImageLoaderConfig.initImageLoader(this, Constants.BASE_IMAGE_CACHE);
-		}
 		tManager=(TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		imm=(InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
 	}

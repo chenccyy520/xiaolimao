@@ -49,7 +49,15 @@
             android:paddingRight="10dp"
             android:src="@drawable/search_box_icon" />
     </LinearLayout>
-
+    
+    <com.sozunyi.xiaolimao.view.ExpandTabView
+        android:id="@+id/expandtab_view"
+        android:layout_width="fill_parent"
+        android:background="#00000000"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+         />
+    
     <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

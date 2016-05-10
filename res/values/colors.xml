@@ -305,6 +305,8 @@
     <color name="chengse">#ff4d00</color>
     <!-- 橙色 -->
     
+    <color name="choose_eara_item_press_color">#f4f4f4</color>
+    <color name="popup_main_background">#11000000</color>
     
     <color name="black">#000</color>
     <color name="transparent">#0000</color>

@@ -3,8 +3,8 @@ package com.sozunyi.xiaolimao.activity;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.Poi;
-
 import com.sozunyi.xiaolimao.service.LocationService;
+import com.sozunyi.xiaolimao.view.MarqueeTextView;
 import com.sozunyi.xiaolimao.baidu.LocationApplication;
 import com.sozunyi.xiaolimao.R;
 
@@ -26,7 +26,7 @@ import android.widget.TextView;
  */
 public class LocationActivity extends Activity {
 	private LocationService locationService;
-	private TextView mCourentLocationResult;//当前地址
+	private MarqueeTextView mCourentLocationResult;//当前地址
 	private Button reLocation;
 
 	@Override
@@ -35,9 +35,10 @@ public class LocationActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		// -----------demo view config ------------
 		setContentView(R.layout.activity_location);
-		mCourentLocationResult = (TextView) findViewById(R.id.tv_courentlocation);
+		mCourentLocationResult = (MarqueeTextView) findViewById(R.id.tv_courentlocation);
 		mCourentLocationResult.setMovementMethod(ScrollingMovementMethod.getInstance());
 		reLocation = (Button) findViewById(R.id.btn_relocation);
+		
 	}
 
 	/**

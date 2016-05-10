@@ -28,18 +28,11 @@
                 android:drawableTop="@drawable/home_tab_main_selector" />
 
             <RadioButton
-                android:id="@+id/home_tab_search"
-                style="@style/home_tab_bottom"
-                android:textSize="13sp"
-                android:textColor="#fff"
-                android:drawableTop="@drawable/home_tab_search_selector" />
-
-            <RadioButton
                 android:id="@+id/home_tab_order"
                 style="@style/home_tab_bottom"
                 android:textSize="13sp"
                 android:textColor="#fff"
-                android:drawableTop="@drawable/home_tab_category_selector" />
+                android:drawableTop="@drawable/home_tab_order_selector" />
 
             <RadioButton
                 android:id="@+id/home_tab_cart"

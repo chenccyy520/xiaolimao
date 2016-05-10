@@ -1,8 +1,5 @@
 package com.sozunyi.xiaolimao;
 
-import com.sozunyi.xiaolimao.config.Constants;
-import com.sozunyi.xiaolimao.image.ImageLoaderConfig;
-
 import android.app.Application;
 import android.content.res.Configuration;
 
@@ -19,7 +16,6 @@ public class BaseApplication extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		ImageLoaderConfig.initImageLoader(this, Constants.BASE_IMAGE_CACHE);
 	}
 
 	@Override

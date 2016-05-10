@@ -3,6 +3,7 @@ package com.sozunyi.xiaolimao.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import android.view.ViewGroup;
  */
 public abstract class BaseFragment extends Fragment {
 
-	public Activity mActivity;
+	public FragmentActivity mActivity;
 	
 	// fragment创建
 	@Override

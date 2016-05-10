@@ -1,27 +1,26 @@
 package com.sozunyi.xiaolimao.pager.impl;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.lidroid.xutils.ViewUtils;
 import com.sozunyi.xiaolimao.R;
-import com.sozunyi.xiaolimao.activity.HomeActivity;
 import com.sozunyi.xiaolimao.activity.LocationActivity;
 import com.sozunyi.xiaolimao.activity.SearchActivity;
 import com.sozunyi.xiaolimao.adapter.HomeAdapter;
-import com.sozunyi.xiaolimao.common.BaseGetLocation;
 import com.sozunyi.xiaolimao.pager.BasePager;
 import com.sozunyi.xiaolimao.service.LocationService;
 import com.sozunyi.xiaolimao.view.MarqueeTextView;
@@ -43,11 +42,10 @@ public class HomePager extends BasePager{
 	
 	private GridView gvJiNeng;//技能
 	
-
 	private MarqueeTextView mTvLocation;//定位
 	private EditText mSearchBox = null;
 	
-	public HomePager(Activity activity) {
+	public HomePager(FragmentActivity activity) {
 		super(activity);
 	}
 	
@@ -64,12 +62,12 @@ public class HomePager extends BasePager{
 		gvJiNeng.setAdapter(myadapter1);
 		
 		clickListener();
-		
+
 //		new BaseGetLocation().startGetLocation();
 //		mTvLocation.setText(BaseGetLocation.gettedLocation);
 		return mRootView;
 	}
-	
+
 	/**
 	 * 初始化数据
 	 */

@@ -53,7 +53,7 @@ public class ContentFragment extends BaseFragment {
 		// 初始化5个子页面
 		mPagerList = new ArrayList<BasePager>();
 		mPagerList.add(new HomePager(mActivity));
-		mPagerList.add(new SearchPager(mActivity));
+		//mPagerList.add(new SearchPager(mActivity));
 		mPagerList.add(new OrderPage(mActivity));
 		mPagerList.add(new ShoppingCartPage(mActivity));
 		mPagerList.add(new PersonalPage(mActivity));
@@ -70,17 +70,17 @@ public class ContentFragment extends BaseFragment {
 					// mViewPager.setCurrentItem(0);// 设置当前页面
 					mViewPager.setCurrentItem(0, false);// 去掉切换页面的动画
 					break;
-				case R.id.home_tab_search:
+				//case R.id.home_tab_search:
+				//	mViewPager.setCurrentItem(1, false);// 设置当前页面
+				//	break;
+				case R.id.home_tab_order:
 					mViewPager.setCurrentItem(1, false);// 设置当前页面
 					break;
-				case R.id.home_tab_order:
+				case R.id.home_tab_cart:
 					mViewPager.setCurrentItem(2, false);// 设置当前页面
 					break;
-				case R.id.home_tab_cart:
-					mViewPager.setCurrentItem(3, false);// 设置当前页面
-					break;
 				case R.id.home_tab_personal:
-					mViewPager.setCurrentItem(4, false);// 设置当前页面
+					mViewPager.setCurrentItem(3, false);// 设置当前页面
 					break;
 
 				default:

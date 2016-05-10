@@ -40,12 +40,7 @@ public class HomeActivity extends FragmentActivity {
 		transaction.commit();// 提交事务
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// TODO Auto-generated method stub
-		getMenuInflater().inflate(R.menu.activity_menu, menu);
-		return true;
-	}
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

@@ -1,6 +1,7 @@
 package com.sozunyi.xiaolimao.pager;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 
